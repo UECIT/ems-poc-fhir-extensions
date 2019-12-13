@@ -18,12 +18,16 @@ public class CoordinateResource extends DomainResource {
   @Child(name = "yCoordinate", min = 1, order = 1)
   private IntegerType yCoordinate;
 
+  @Child(name = "zCoordinate", order = 2)
+  private IntegerType zCoordinate;
+
   @Override
   public DomainResource copy() {
     CoordinateResource copy = new CoordinateResource();
     super.copyValues(copy);
     copy.xCoordinate = xCoordinate;
     copy.yCoordinate = yCoordinate;
+    copy.zCoordinate = zCoordinate;
     return copy;
   }
 
@@ -39,7 +43,7 @@ public class CoordinateResource extends DomainResource {
 
   @Override
   public boolean isEmpty() {
-    return ElementUtil.isEmpty(xCoordinate, yCoordinate);
+    return ElementUtil.isEmpty(xCoordinate, yCoordinate, zCoordinate);
   }
 
 }
