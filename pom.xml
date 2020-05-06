@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>uk.nhs.ctp</groupId>
-	<artifactId>EMCI-Fhir-Profiles</artifactId>
+	<artifactId>EMS-Fhir-Extensions</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<dependencies>
 		<dependency>
@@ -11,13 +11,30 @@
 			<artifactId>hapi-fhir-structures-dstu3</artifactId>
 			<version>3.7.0</version>
 		</dependency>
+
+		<!-- Other -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.10</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
+	
+	<distributionManagement>
+		<repository>
+			<id>bintray-ems-test-harness-EMS-Test-Harness</id>
+			<name>ems-test-harness-EMS-Test-Harness</name>
+			<url>https://api.bintray.com/maven/ems-test-harness/EMS-Test-Harness/EMS-Fhir-Extensions/;publish=1</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
